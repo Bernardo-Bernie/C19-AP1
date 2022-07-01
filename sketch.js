@@ -53,9 +53,17 @@ function draw() {
     if (climbersGroup.isTouching(ghost)) {
       ghost.velocityY = 0;
     }
+    if (ghost.y>600){
+      gameState = "end";
+    }
     
   } else if (gameState === "end") {
-
+    ghost.destroy();
+    background("black");
+    stroke("yellow");
+    fill("yellow");
+    textSize(30);
+    text("Game Over",230,250);
   }
 
   
